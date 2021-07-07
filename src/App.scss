@@ -125,6 +125,16 @@ h6 {
   flex-direction: column;
   min-height: 100vh;
 }
+.form{
+  width: 500px;
+}
+.container{
+  padding: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
 
 .arrow-up {
   border-bottom: 5px solid $gray-mid;
@@ -3889,6 +3899,7 @@ form{
 
   & > * {
     align-self: center;
+    align-content: left;
     text-align: center;
   }
 }
