@@ -1,0 +1,2 @@
+(this.webpackJsonpcovid19india=this.webpackJsonpcovid19india||[]).push([[8],{129:function(e,r,i){"use strict";i.r(r);var t=i(2),n=i(20);function s(){return Object(n.jsxs)("footer",{children:[Object(n.jsx)("div",{className:"link",children:Object(n.jsx)("a",{href:"/",target:"_blank",rel:"noopener noreferrer",children:"Covid-19 Tracker"})}),Object(n.jsx)("h5",{children:"Awareness is the first step in our fight against COVID, let's do our part"})]})}r.default=Object(t.memo)(s)}}]);
+//# sourceMappingURL=8.27a2823e.chunk.js.map
