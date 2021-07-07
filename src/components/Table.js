@@ -246,68 +246,7 @@ function Table({
 
   return (
     <div className="Table">
-      <div className="table-top">
-        <div className="table-top-left">
-          <Tooltip message={'Toggle between states/districts'} hold>
-            <animated.div
-              className={classnames('toggle', 'option-toggle', {
-                'is-highlighted': showDistricts,
-                disabled: hideDistrictData,
-              })}
-              onClick={_setTableOption}
-              style={trail[0]}
-            >
-              <DistrictIcon />
-            </animated.div>
-          </Tooltip>
-
-          <Tooltip message={'Per lakh people'} hold>
-            <animated.div
-              className={classnames('toggle', 'lakh-toggle', {
-                'is-highlighted': isPerLakh,
-              })}
-              onClick={setIsPerLakh.bind(this, !isPerLakh)}
-              style={trail[1]}
-            >
-              <PerLakhIcon />
-            </animated.div>
-          </Tooltip>
-
-          <Tooltip message={'Last 7 day values'} hold>
-            <animated.div
-              className={classnames('toggle', 'delta-toggle', {
-                'is-highlighted': delta7Mode,
-              })}
-              style={trail[2]}
-              onClick={setDelta7Mode.bind(this, !delta7Mode)}
-            >
-              <Delta7Icon />
-            </animated.div>
-          </Tooltip>
-
-          <animated.div
-            className={classnames('toggle', 'info-toggle', {
-              'is-highlighted': isInfoVisible,
-            })}
-            onClick={setIsInfoVisible.bind(this, !isInfoVisible)}
-            style={trail[3]}
-          >
-            <QuestionIcon size={14} />
-          </animated.div>
-        </div>
-
-        <Tooltip message={`${expandTable ? 'Collapse' : 'Expand'} table`} hold>
-          <animated.div
-            className={classnames('toggle', 'expand-table-toggle', {
-              'is-highlighted': expandTable,
-            })}
-            style={trail[4]}
-            onClick={setExpandTable.bind(this, !expandTable)}
-          >
-            <FoldDownIcon size={16} />
-          </animated.div>
-        </Tooltip>
-      </div>
+      
 
       {transition(
         (style, item) =>

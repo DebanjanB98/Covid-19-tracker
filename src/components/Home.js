@@ -188,8 +188,8 @@ function Home() {
               )}
             </>
           </div>
-
-          {!hideVaccinated && <VaccinationHeader data={data['TT']} />}
+          <br />
+          
 
           {data && (
             <Suspense fallback={<TableLoader />}>
@@ -209,6 +209,7 @@ function Home() {
               />
             </Suspense>
           )}
+          {!hideVaccinated && <VaccinationHeader data={data['TT']} />}
         </div>
 
         <div

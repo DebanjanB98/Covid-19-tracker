@@ -23,27 +23,27 @@ export const LOCALE_SHORTHANDS = {
 
 export const STATISTIC_CONFIGS = {
   confirmed: {
-    displayName: 'confirmed',
+    displayName: 'Confirmed Cases',
     color: '#ff073a',
     format: 'long',
     showDelta: true,
     hasPrimary: true,
   },
   active: {
-    displayName: 'active',
+    displayName: 'Active Cases',
     color: '#007bff',
     format: 'long',
     hasPrimary: true,
   },
   recovered: {
-    displayName: 'recovered',
+    displayName: 'No. of Recovered',
     color: '#28a745',
     format: 'long',
     showDelta: true,
     hasPrimary: true,
   },
   deceased: {
-    displayName: 'deceased',
+    displayName: 'No. of Deceased',
     color: '#6c757d',
     format: 'long',
     showDelta: true,

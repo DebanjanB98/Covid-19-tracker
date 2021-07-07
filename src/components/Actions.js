@@ -1,10 +1,14 @@
 import ActionsPanel from './ActionsPanel';
+
+import {API_DOMAIN} from '../constants';
+import {fetcher, retry} from '../utils/commonFunctions';
+
 import equal from 'fast-deep-equal';
-import {memo, useState} from 'react';
+import {memo, useState, useEffect, lazy, Suspense} from 'react';
 import {useLocalStorage} from 'react-use';
+import useSWR from 'swr';
 
-
-
+const Updates = lazy(() => retry(() => import('./Updates')));
 
 const Actions = ({date, setDate, dates}) => {
   const [showUpdates, setShowUpdates] = useState(false);
@@ -12,7 +16,19 @@ const Actions = ({date, setDate, dates}) => {
   const [lastViewedLog, setLastViewedLog] = useLocalStorage('lastViewedLog', 0);
   const [isTimelineMode, setIsTimelineMode] = useState(false);
 
-  
+  const {data: updates} = useSWR(`${API_DOMAIN}/updatelog/log.json`, fetcher, {
+    revalidateOnFocus: true,
+  });
+
+  useEffect(() => {
+    if (updates !== undefined) {
+      const lastTimestamp = updates.slice().reverse()[0].timestamp * 1000;
+      if (lastTimestamp !== lastViewedLog) {
+        setNewUpdate(true);
+        setLastViewedLog(lastTimestamp);
+      }
+    }
+  }, [lastViewedLog, updates, setLastViewedLog, setNewUpdate]);
 
   return (
     <>

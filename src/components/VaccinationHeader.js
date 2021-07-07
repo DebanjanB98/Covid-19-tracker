@@ -48,7 +48,7 @@ function ProgressBar({dose1, dose2}) {
             onMouseEnter={setHighlightedDose.bind(this, 1)}
             onMouseLeave={setHighlightedDose.bind(this, 2)}
           >
-            {t('At least one dose')}
+            {t('Partially Vaccinated')}
           </div>
         </div>
         <animated.div

@@ -1,10 +1,8 @@
 import './App.scss';
 import Navbar from './components/Navbar';
 import {retry} from './utils/commonFunctions';
-
 import {lazy, Suspense} from 'react';
 import {Route, Redirect, Switch, useLocation} from 'react-router-dom';
-import { Form } from 'react-bootstrap';
 
 const Home = lazy(() => retry(() => import('./components/Home')));
 const About = lazy(() => retry(() => import('./components/About')));
@@ -25,6 +23,12 @@ const App = () => {
       showInNavbar: true,
     },
     {
+      pageLink: '/contactus',
+      view: Contactus,
+      displayName: 'Emergency Contact',
+      showInNavbar: true,
+    },
+    {
       pageLink: '/about',
       view: About,
       displayName: 'About',
@@ -36,15 +40,10 @@ const App = () => {
       displayName: 'State',
       showInNavbar: false,
     },
-    {
-      pageLink: '/contactus',
-      view: Contactus,
-      displayName: 'Emergency Contact',
-      showInNavbar: true,
-    },
+    
   ];
 
-
+  
   return (
     <div className="App">
       

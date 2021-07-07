@@ -71,16 +71,17 @@ function Navbar({pages}) {
                 <Home {...activeNavIcon('/')} />
               </span>
             </Link>
-            <Link to="/about">
-              <span>
-                <HelpCircle {...activeNavIcon('/about')} />
-              </span>
-            </Link>
             <Link to="/contactus">
               <span>
                 <Phone {...activeNavIcon('/contactus')} />
               </span>
             </Link>
+            <Link to="/about">
+              <span>
+                <HelpCircle {...activeNavIcon('/about')} />
+              </span>
+            </Link>
+            
             <span>
               <SunMoon {...{darkMode}} />
             </span>
@@ -134,7 +135,7 @@ function Expand({pages, setExpand, darkMode, windowSize}) {
       {windowSize.width < 769 && <SunMoon {...{darkMode}} />}
 
       <div className="expand-bottom">
-        <h5>{'Developed by Debanjan Bardhan and Adrija Paul'}</h5>
+        <h5>{'Dark/Light Mode'}</h5>
       </div>
     </div>
   );
